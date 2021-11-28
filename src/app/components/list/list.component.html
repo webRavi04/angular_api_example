@@ -1,0 +1,38 @@
+<div class="container">  
+  <nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Hello</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Last Name</th>
+            <th>Lastname</th>
+            <th>Avatar</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of storeData">
+            <td>{{user.id}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td><img src="{{user.avatar}}" alt="ImgAvatar"></td>
+            <td><a routerLink="/listing"><i (click)="deleteCall(user.id)" class="fa fa-trash" style="color: red;"></i></a></td>
+          </tr>
+        </tbody>
+      </table>    
+
+
+</div>
